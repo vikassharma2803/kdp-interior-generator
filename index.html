@@ -7,36 +7,63 @@
 </head>
 <body>
 
-  <h1>📘 KDP Notebook Interior Generator</h1>
+<h1>📘 KDP Notebook Interior Generator</h1>
 
-  <div class="controls">
-    
-    <label>Size:</label>
-    <select id="size">
-      <option value="6x9">6 x 9</option>
-      <option value="7x10">7 x 10</option>
-      <option value="8.5x11">8.5 x 11</option>
-    </select>
+<div class="controls">
 
-    <label>Page Type:</label>
-    <select id="type">
-      <option value="ruled">Ruled</option>
-      <option value="dotted">Dotted</option>
-      <option value="graph">Graph</option>
-      <option value="blank">Blank</option>
-    </select>
+  <label>Size:</label>
+  <select id="size">
+    <option value="6x9">6 x 9</option>
+    <option value="7x10">7 x 10</option>
+    <option value="8.5x11">8.5 x 11</option>
+  </select>
 
-    <label>Pages:</label>
-    <input type="number" id="pages" value="120">
+  <label>Page Type:</label>
+  <select id="type">
+    <option value="ruled">Ruled</option>
+    <option value="dotted">Dotted</option>
+    <option value="graph">Graph</option>
+    <option value="blank">Blank</option>
+  </select>
 
-    <label>Spacing (mm):</label>
-    <input type="number" id="spacing" value="8">
+  <label>Pages:</label>
+  <input type="number" id="pages" value="120">
 
-    <button onclick="generatePDF()">Download PDF</button>
+  <label>Spacing (mm):</label>
+  <input type="number" id="spacing" value="8">
 
+  <label>Bleed:</label>
+  <select id="bleed">
+    <option value="no">No Bleed</option>
+    <option value="yes">Bleed</option>
+  </select>
+
+  <label>Margins:</label>
+  <select id="marginType">
+    <option value="standard">KDP Standard</option>
+    <option value="custom">Custom</option>
+  </select>
+
+  <div id="customMargins" style="display:none;">
+    <label>Top:</label>
+    <input type="number" id="marginTop" value="12.7">
+    <label>Bottom:</label>
+    <input type="number" id="marginBottom" value="12.7">
+    <label>Outside:</label>
+    <input type="number" id="marginOutside" value="12.7">
+    <label>Inside:</label>
+    <input type="number" id="marginInside" value="15.9">
   </div>
 
-</body>
+  <button onclick="generatePDF()">Download PDF</button>
+
+</div>
+
+<h2>👀 Live Preview</h2>
+<canvas id="previewCanvas"></canvas>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="script.js"></script>
+
+</body>
 </html>
