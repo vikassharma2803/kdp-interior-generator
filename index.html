@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KDP Interior Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>📘 KDP Notebook Interior Generator</h1>
+
+  <div class="controls">
+    
+    <label>Size:</label>
+    <select id="size">
+      <option value="6x9">6 x 9</option>
+      <option value="7x10">7 x 10</option>
+      <option value="8.5x11">8.5 x 11</option>
+    </select>
+
+    <label>Page Type:</label>
+    <select id="type">
+      <option value="ruled">Ruled</option>
+      <option value="dotted">Dotted</option>
+      <option value="graph">Graph</option>
+      <option value="blank">Blank</option>
+    </select>
+
+    <label>Pages:</label>
+    <input type="number" id="pages" value="120">
+
+    <label>Spacing (mm):</label>
+    <input type="number" id="spacing" value="8">
+
+    <button onclick="generatePDF()">Download PDF</button>
+
+  </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</html>
